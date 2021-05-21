@@ -1,0 +1,17 @@
+#!/bin/sh
+
+mkdir portrait
+mkdir landscape
+
+for f in *.jpg *.png *.gif
+do
+  r=$(identify -format '%[fx:(h>w)]' "$f")
+  if [[ r -eq 1 ]] 
+  then
+  echo "Moving $f to portrait folder..."
+  mv "$f" portrait/
+  else
+  echo "Moving $f to landscape folder..."
+  mv "$f" landscape/
+  fi
+done
