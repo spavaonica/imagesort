@@ -5,8 +5,8 @@ I wanted to automatically sort my wallpapers by landscape and portrait orientati
 
 ## Installation
 
-It's a simple shell script. Just download it anywhere (preferably somewhere in your PATH) and execute it. It has no dependencies.
+It's a simple shell script. Just download it anywhere (preferably somewhere in your PATH) and execute it. Depends on ImageMagick.
 
 ## Usage
 
-Just cd into your desired directory and execute the script. It will automatically create two folders called "portrait" and "landscape" , and it will move all .png, .jpg, and .gif files into those folders, based on their orientation. That's it.
+Just cd into your desired directory and execute the script. Alternatively you can run it from anywhere with imagesort [directory]. It will automatically create two folders called "portrait" and "landscape" , and it will move all .png, .jpg, and .gif files into those folders, based on their orientation. That's it.

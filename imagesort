@@ -1,17 +1,20 @@
 #!/bin/sh
 
-mkdir portrait
-mkdir landscape
+loc=$PWD
+[ -n "$1" ] && loc=$1
 
-for f in *.jpg *.png *.gif
+mkdir $loc/portrait
+mkdir $loc/landscape
+
+for file in $loc/*.jpg $loc/*.png $loc/*.gif
 do
-  r=$(identify -format '%[fx:(h>w)]' "$f")
+  r=$(identify -format '%[fx:(h>w)]' "$file")
   if [[ r -eq 1 ]] 
   then
-  echo "Moving $f to portrait folder..."
-  mv "$f" portrait/
+  echo "Moving $file to portrait folder..."
+  mv "$file" $loc/portrait/
   else
-  echo "Moving $f to landscape folder..."
-  mv "$f" landscape/
+  echo "Moving $file to landscape folder..."
+  mv "$file" $loc/landscape/
   fi
 done
